@@ -1,20 +1,22 @@
 /* Paleta de colores - Tema oscuro */
 :root {
-    --color-primario: #1a1a2e; /* Azul muy oscuro - fondo principal */
-    --color-secundario: #16213e; /* Azul oscuro - fondo secundario */
-    --color-terciario: #0f3460; /* Azul medio - elementos contenedores */
-    --color-acento: #e94560; /* Rosa/rojo - color acento */
-    --color-acento-secundario: #00b4d8; /* Azul claro - segundo acento */
-    --color-texto: #e6e6e6; /* Gris muy claro - texto principal */
-    --color-texto-secundario: #b0b0b0; /* Gris medio - texto secundario */
-    --color-fondo: #121212; /* Negro/gris muy oscuro - fondo general */
-    --color-fondo-tarjeta: #1e1e30; /* Azul muy oscuro - fondo tarjetas */
-    --sombra: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra estándar */
-    --sombra-neon: 0 0 8px rgba(233, 69, 96, 0.5); /* Sombra neon para acentos */
+    --color-primario: #06141B; /* Azul grisáceo muy oscuro - fondo principal */
+    --color-secundario: #11212D; /* Azul oscuro profundo - fondo secundario */
+    --color-terciario: #253745; /* Azul grisáceo medio - elementos contenedores */
+    --color-acento: #4A5C6A; /* Azul desaturado - color acento */
+    --color-acento-secundario: #9BA8AB; /* Gris azulado claro - segundo acento */
+    --color-texto: #CCD0CF; /* Gris muy claro - texto principal */
+    --color-texto-secundario: #9BA8AB; /* Gris medio - texto secundario */
+    --color-fondo: #06141B; /* Igual que el color primario - fondo general */
+    --color-fondo-tarjeta: #11212D; /* Igual que el secundario - fondo tarjetas */
+    --sombra: 0 4px 12px rgba(0, 0, 0, 0.4); /* Sombra estándar */
+    --sombra-neon: 0 0 10px rgba(74, 92, 106, 0.5); /* Sombra suave en el color acento */
     --degradado-primario: linear-gradient(135deg, var(--color-primario), var(--color-terciario));
-    --degradado-acento: linear-gradient(135deg, var(--color-acento), #ff7b92);
-    --degradado-acento-secundario: linear-gradient(45deg, var(--color-acento-secundario), #90e0ef);
+    --degradado-acento: linear-gradient(135deg, var(--color-acento), var(--color-acento-secundario));
+    --degradado-acento-secundario: linear-gradient(45deg, var(--color-acento-secundario), #CCD0CF);
 }
+
+
 
 /* Estilos generales */
 * {
