@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <!-- Menú de navegación (FLEXBOX) -->
+    <header id="cabecera">
+        <nav class="menu">
+            <div class="logo">Mi Portafolio</div>
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="menu-icon">&#9776;</label>
+            <ul class="menu-list">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#sobremi">Sobre Mí</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#idiomas">Idiomas</a></li>
+                <li><a href="#experiencia">Experiencia</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Sección Inicio (FLEXBOX) -->
+        <section id="inicio" class="seccion">
+            <div class="contenedor-inicio">
+                <div class="foto-perfil">
+                    <img src="imagen-perfil.jpg" alt="Mi foto de perfil">
+                </div>
+                <div class="presentacion">
+                    <h1>¡Hola! Soy [Tu Nombre]</h1>
+                    <h2>Desarrollador Web</h2>
+                    <p>Bienvenido a mi portafolio. Aquí podrás conocer mis habilidades, proyectos y experiencia profesional.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Sobre Mí (GRID) -->
+        <section id="sobremi" class="seccion">
+            <h2>Sobre Mí</h2>
+            <div class="grid-sobremi">
+                <div class="habilidades">
+                    <h3>Habilidades Técnicas</h3>
+                    <ul>
+                        <li>HTML5 y CSS3</li>
+                        <li>JavaScript</li>
+                        <li>React</li>
+                        <li>Node.js</li>
+                        <li>SQL</li>
+                    </ul>
+                </div>
+                <div class="formacion">
+                    <h3>Formación</h3>
+                    <ul>
+                        <li>Grado Superior en Desarrollo Web</li>
+                        <li>Curso de Especialización Frontend</li>
+                        <li>Bootcamp Full Stack Developer</li>
+                    </ul>
+                </div>
+                <div class="intereses">
+                    <h3>Intereses</h3>
+                    <ul>
+                        <li>Desarrollo Web</li>
+                        <li>UX/UI</li>
+                        <li>Inteligencia Artificial</li>
+                        <li>Videojuegos</li>
+                    </ul>
+                </div>
+                <div class="habilidades-blandas">
+                    <h3>Habilidades Blandas</h3>
+                    <ul>
+                        <li>Trabajo en equipo</li>
+                        <li>Comunicación</li>
+                        <li>Resolución de problemas</li>
+                        <li>Adaptabilidad</li>
+                    </ul>
+                </div>
+                <div class="tecnologias-favoritas">
+                    <h3>Tecnologías Favoritas</h3>
+                    <ul>
+                        <li>React</li>
+                        <li>TailwindCSS</li>
+                        <li>Express.js</li>
+                        <li>MongoDB</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Proyectos (GRID) -->
+        <section id="proyectos" class="seccion">
+            <h2>Proyectos Destacados</h2>
+            <div class="proyectos-grid">
+                <article class="proyecto">
+                    <img src="proyecto1.jpg" alt="Proyecto 1">
+                    <h3>Proyecto 1</h3>
+                    <p>Descripción del proyecto 1. Tecnologías utilizadas y funcionalidades principales.</p>
+                </article>
+                <article class="proyecto">
+                    <img src="proyecto2.jpg" alt="Proyecto 2">
+                    <h3>Proyecto 2</h3>
+                    <p>Descripción del proyecto 2. Tecnologías utilizadas y funcionalidades principales.</p>
+                </article>
+                <article class="proyecto">
+                    <img src="proyecto3.jpg" alt="Proyecto 3">
+                    <h3>Proyecto 3</h3>
+                    <p>Descripción del proyecto 3. Tecnologías utilizadas y funcionalidades principales.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Sección Idiomas (FLEX) -->
+        <section id="idiomas" class="seccion">
+            <h2>Idiomas</h2>
+            <table class="tabla-idiomas">
+                <thead>
+                    <tr>
+                        <th>Idioma</th>
+                        <th>Nivel Hablado</th>
+                        <th>Nivel Escrito</th>
+                        <th>Certificación</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Español</td>
+                        <td>Nativo</td>
+                        <td>Nativo</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>Inglés</td>
+                        <td>Avanzado</td>
+                        <td>Avanzado</td>
+                        <td>B2</td>
+                    </tr>
+                    <tr>
+                        <td>Francés</td>
+                        <td>Intermedio</td>
+                        <td>Intermedio</td>
+                        <td>A2</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Sección Experiencia (FLEXBOX) -->
+        <section id="experiencia" class="seccion">
+            <h2>Experiencia Laboral</h2>
+            <div class="experiencia-container">
+                <article class="experiencia">
+                    <h3>Desarrollador Web</h3>
+                    <h4>Empresa XYZ - 2021-Actualidad</h4>
+                    <p>Desarrollo y mantenimiento de aplicaciones web utilizando React, Node.js y MongoDB. Implementación de nuevas funcionalidades y resolución de bugs.</p>
+                </article>
+                <article class="experiencia">
+                    <h3>Programador Junior</h3>
+                    <h4>Empresa ABC - 2019-2021</h4>
+                    <p>Desarrollo frontend con HTML, CSS y JavaScript. Colaboración con el equipo de diseño para implementar interfaces de usuario.</p>
+                </article>
+                <article class="experiencia">
+                    <h3>Becario</h3>
+                    <h4>Empresa DEF - 2018-2019</h4>
+                    <p>Apoyo en tareas de desarrollo web y mantenimiento de bases de datos.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Sección Contacto (FLEXBOX) -->
+        <section id="contacto" class="seccion">
+            <h2>Contacto</h2>
+            <form class="formulario-contacto">
+                <div class="form-grupo">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div class="form-grupo">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-grupo">
+                    <label for="asunto">Asunto:</label>
+                    <input type="text" id="asunto" name="asunto" required>
+                </div>
+                <div class="form-grupo">
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Mi Portafolio. Todos los derechos reservados.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

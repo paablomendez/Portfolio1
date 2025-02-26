@@ -1,0 +1,705 @@
+/* Paleta de colores - Tema oscuro */
+:root {
+    --color-primario: #1a1a2e; /* Azul muy oscuro - fondo principal */
+    --color-secundario: #16213e; /* Azul oscuro - fondo secundario */
+    --color-terciario: #0f3460; /* Azul medio - elementos contenedores */
+    --color-acento: #e94560; /* Rosa/rojo - color acento */
+    --color-acento-secundario: #00b4d8; /* Azul claro - segundo acento */
+    --color-texto: #e6e6e6; /* Gris muy claro - texto principal */
+    --color-texto-secundario: #b0b0b0; /* Gris medio - texto secundario */
+    --color-fondo: #121212; /* Negro/gris muy oscuro - fondo general */
+    --color-fondo-tarjeta: #1e1e30; /* Azul muy oscuro - fondo tarjetas */
+    --sombra: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra estándar */
+    --sombra-neon: 0 0 8px rgba(233, 69, 96, 0.5); /* Sombra neon para acentos */
+    --degradado-primario: linear-gradient(135deg, var(--color-primario), var(--color-terciario));
+    --degradado-acento: linear-gradient(135deg, var(--color-acento), #ff7b92);
+    --degradado-acento-secundario: linear-gradient(45deg, var(--color-acento-secundario), #90e0ef);
+}
+
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--color-texto);
+    background-color: var(--color-fondo);
+    background-image: radial-gradient(circle at top right, rgba(23, 43, 77, 0.5) 0%, rgba(18, 18, 18, 0.8) 75%), 
+                      linear-gradient(to bottom, var(--color-fondo), var(--color-primario));
+    background-attachment: fixed;
+    position: relative;
+    overflow-x: hidden; /* Prevenir scroll horizontal */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Asegurar que el contenido ocupe al menos toda la altura de la ventana */
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="none" width="100" height="100"/><rect fill="rgba(255,255,255,0.03)" width="1" height="1"/></svg>');
+    pointer-events: none;
+    opacity: 0.3;
+    z-index: -1;
+}
+
+/* Estilos del encabezado y navegación (FLEXBOX) */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0; /* Asegurar que está completamente centrado */
+    background-color: rgba(26, 26, 46, 0.95);
+    backdrop-filter: blur(8px);
+    color: var(--color-texto);
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    border-bottom: 1px solid rgba(233, 69, 96, 0.2);
+}
+
+/* Menú de navegación con Flexbox */
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    max-width: 1400px; /* Limitar ancho máximo */
+    margin: 0 auto; /* Centrar el menú */
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--color-texto);
+    text-shadow: 0 0 10px rgba(233, 69, 96, 0.5);
+    position: relative;
+}
+
+.logo::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50%;
+    height: 2px;
+    background: var(--degradado-acento);
+    border-radius: 10px;
+}
+
+/* Lista del menú con Flexbox */
+.menu-list {
+    display: flex;
+    list-style: none;
+    justify-content: center; /* Centrar los elementos horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+}
+
+.menu-list li {
+    margin: 0 15px;
+    text-align: center; /* Centrar texto */
+}
+
+.menu-list a {
+    color: var(--color-texto);
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    position: relative;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    display: inline-block; /* Mejor control para centrarlo */
+    text-align: center; /* Centrar texto dentro del enlace */
+}
+
+.menu-list a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--degradado-acento);
+    transition: width 0.3s ease;
+    border-radius: 10px;
+}
+
+.menu-list a:hover {
+    color: var(--color-acento);
+}
+
+.menu-list a:hover::after {
+    width: 100%;
+}
+
+/* Ocultar el checkbox y el icono de hamburguesa por defecto */
+#menu-toggle, .menu-icon {
+    display: none;
+}
+
+.menu-icon {
+    color: var(--color-texto);
+    font-size: 1.5rem;
+}
+
+/* Estilos de las secciones */
+.seccion {
+    padding: 100px 30px;
+    margin-top: 60px;
+    position: relative;
+    overflow: hidden;
+    width: 100%; /* Asegurar que ocupa todo el ancho */
+    display: flex; /* Para poder centrar el contenido */
+    flex-direction: column; /* Ordenar elementos verticalmente */
+    align-items: center; /* Centrar elementos horizontalmente */
+}
+
+.seccion::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-acento-secundario), transparent);
+}
+
+h1, h2, h3 {
+    color: var(--color-texto);
+    width: 100%; /* Asegurar que ocupan todo el ancho disponible */
+    text-align: center; /* Centrar texto */
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+    padding-bottom: 15px;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+h2::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 3px;
+    background: var(--degradado-acento);
+    border-radius: 10px;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 3px;
+    background: var(--degradado-acento-secundario);
+    border-radius: 10px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar contenido principal */
+    width: 100%;
+    flex-grow: 1;
+}
+
+/* Sección Inicio (FLEXBOX) */
+.contenedor-inicio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 60px;
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 100%; /* Asegurar que usa todo el ancho disponible */
+}
+
+.foto-perfil {
+    flex: 1;
+    min-width: 300px;
+    display: flex; /* Para centrar la imagen */
+    justify-content: center; /* Centrado horizontal */
+    align-items: center; /* Centrado vertical */
+    position: relative;
+}
+
+.foto-perfil::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 270px;
+    height: 270px;
+    background: var(--degradado-acento);
+    border-radius: 50%;
+    opacity: 0.15;
+    filter: blur(20px);
+    animation: pulse 6s infinite alternate;
+}
+
+@keyframes pulse {
+    0% { transform: translate(-50%, -50%) scale(1); opacity: 0.15; }
+    100% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.25; }
+}
+
+.foto-perfil img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--color-acento);
+    box-shadow: 0 0 25px rgba(233, 69, 96, 0.5);
+    position: relative;
+    z-index: 2;
+}
+
+.presentacion {
+    flex: 2;
+    min-width: 300px;
+    text-align: center; /* Centrar texto en modo responsivo */
+}
+
+.presentacion h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    background: linear-gradient(to right, var(--color-texto), var(--color-acento));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 800;
+}
+
+.presentacion h2 {
+    font-size: 1.8rem;
+    color: var(--color-acento-secundario);
+    margin-bottom: 25px;
+    text-align: center; /* Mantener centrado en ambos modos */
+    padding-bottom: 0;
+}
+
+.presentacion h2::before,
+.presentacion h2::after {
+    display: none;
+}
+
+.presentacion p {
+    font-size: 1.1rem;
+    color: var(--color-texto-secundario);
+    margin-bottom: 30px;
+    line-height: 1.8;
+    text-align: center; /* Centrar párrafos */
+}
+
+/* Sección Sobre Mí (GRID) */
+.grid-sobremi {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.grid-sobremi div {
+    background-color: var(--color-fondo-tarjeta);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: var(--sombra);
+    border-top: 4px solid var(--color-acento);
+    transition: transform 0.3s ease;
+    text-align: center; /* Centrar contenido */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar verticalmente */
+}
+
+.grid-sobremi div:hover {
+    transform: translateY(-5px);
+}
+
+.grid-sobremi h3 {
+    margin-bottom: 15px;
+    color: var(--color-acento-secundario);
+}
+
+.grid-sobremi ul {
+    list-style-position: inside;
+    margin-top: 10px;
+    text-align: center; /* Centrar listas */
+    padding: 0; /* Eliminar padding que puede afectar al centrado */
+}
+
+.grid-sobremi li {
+    margin-bottom: 8px;
+}
+
+/* Sección Proyectos (GRID) */
+.proyectos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.proyecto {
+    background-color: var(--color-fondo-tarjeta);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--sombra);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar contenido */
+    text-align: center; /* Centrar texto */
+}
+
+.proyecto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+.proyecto img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.proyecto h3 {
+    padding: 15px 15px 5px;
+    color: var(--color-acento);
+    width: 100%;
+}
+
+.proyecto p {
+    padding: 0 15px 15px;
+    text-align: center; /* Centrar texto */
+    width: 100%;
+}
+
+/* Sección Idiomas */
+.tabla-idiomas {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--sombra);
+    text-align: center; /* Centrar texto en celdas */
+}
+
+.tabla-idiomas th, .tabla-idiomas td {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 12px 15px;
+    text-align: center; /* Centrar contenido en las celdas */
+}
+
+.tabla-idiomas th {
+    background-color: var(--color-terciario);
+    color: var(--color-texto);
+}
+
+.tabla-idiomas tr:nth-child(even) {
+    background-color: rgba(30, 30, 48, 0.7);
+}
+
+.tabla-idiomas tr:hover {
+    background-color: rgba(15, 52, 96, 0.5);
+}
+
+/* Sección Experiencia (FLEXBOX) */
+.experiencia-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.experiencia {
+    background-color: var(--color-fondo-tarjeta);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: var(--sombra);
+    border-left: 4px solid var(--color-acento);
+    position: relative;
+    text-align: center; /* Centrar contenido */
+}
+
+.experiencia::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: -12px;
+    width: 20px;
+    height: 20px;
+    background-color: var(--color-acento);
+    border-radius: 50%;
+    border: 3px solid var(--color-fondo-tarjeta);
+}
+
+.experiencia h3 {
+    color: var(--color-acento-secundario);
+    margin-bottom: 5px;
+}
+
+.experiencia h4 {
+    color: var(--color-acento);
+    font-style: italic;
+    margin-bottom: 15px;
+    text-align: center; /* Centrar */
+}
+
+/* Sección Contacto (FLEXBOX) */
+.formulario-contacto {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    gap: 15px;
+    background-color: var(--color-fondo-tarjeta);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: var(--sombra);
+    align-items: center; /* Centrar elementos del formulario */
+}
+
+.form-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%; /* Usar todo el ancho disponible */
+}
+
+.formulario-contacto label {
+    font-weight: bold;
+    color: var(--color-texto);
+    text-align: left; /* Alinear etiquetas a la izquierda */
+}
+
+.formulario-contacto input,
+.formulario-contacto textarea {
+    padding: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgba(15, 15, 30, 0.6);
+    color: var(--color-texto);
+    border-radius: 5px;
+    transition: border-color 0.3s;
+    width: 100%; /* Usar todo el ancho disponible */
+}
+
+.formulario-contacto input:focus,
+.formulario-contacto textarea:focus {
+    outline: none;
+    border-color: var(--color-acento-secundario);
+    box-shadow: 0 0 8px rgba(0, 180, 216, 0.5);
+}
+
+.formulario-contacto button {
+    padding: 12px 25px;
+    background: var(--degradado-acento);
+    color: var(--color-texto);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    align-self: center; /* Centrar botón */
+    min-width: 150px;
+}
+
+.formulario-contacto button:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--sombra-neon);
+}
+
+/* Footer */
+footer {
+    background-color: var(--color-primario);
+    color: var(--color-texto-secundario);
+    text-align: center;
+    padding: 25px;
+    margin-top: 50px;
+    width: 100%;
+    border-top: 1px solid rgba(233, 69, 96, 0.2);
+}
+
+/* Media queries para responsive */
+@media (max-width: 768px) {
+    /* Menú hamburguesa */
+    .menu {
+        padding: 15px 20px; /* Reducir padding en móvil */
+    }
+    
+    .menu-icon {
+        display: block;
+        cursor: pointer;
+    }
+
+    .menu-list {
+        display: none;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-around;
+        padding: 15px 0;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: rgba(26, 26, 46, 0.95);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(233, 69, 96, 0.2);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .menu-list li {
+        margin: 0; /* Eliminar márgenes */
+        width: auto; /* Permitir que el ancho se ajuste al contenido */
+    }
+
+    .menu-list a {
+        font-size: 0.8rem; /* Hacer texto más pequeño */
+        padding: 8px 5px; /* Reducir padding */
+        white-space: nowrap; /* Evitar saltos de línea */
+    }
+
+    #menu-toggle:checked ~ .menu-list {
+        display: flex;
+    }
+
+    /* Ajustes adicionales para responsive */
+    .seccion {
+        padding: 80px 15px; /* Reducir padding */
+    }
+
+    .contenedor-inicio {
+        flex-direction: column;
+    }
+
+    .presentacion {
+        text-align: center;
+    }
+
+    .presentacion h1 {
+        font-size: 2.5rem;
+    }
+
+    .presentacion h2 {
+        text-align: center;
+        font-size: 1.5rem;
+    }
+
+    .grid-sobremi {
+        grid-template-columns: 1fr;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+    
+    /* Asegurar que los campos del formulario usen todo el ancho disponible */
+    .formulario-contacto {
+        padding: 20px 15px;
+    }
+    
+    /* Ajustar proyectos para mejor visualización en móvil */
+    .proyectos-grid {
+        gap: 20px;
+    }
+}
+/* Añadir al final del archivo estilos.css */
+
+/* Estilos para animaciones de scroll */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Escalonar las animaciones para elementos en grid */
+.grid-sobremi > div:nth-child(1) { transition-delay: 0.1s; }
+.grid-sobremi > div:nth-child(2) { transition-delay: 0.2s; }
+.grid-sobremi > div:nth-child(3) { transition-delay: 0.3s; }
+.grid-sobremi > div:nth-child(4) { transition-delay: 0.4s; }
+.grid-sobremi > div:nth-child(5) { transition-delay: 0.5s; }
+
+/* Estilos para el formulario de contacto */
+.formulario-contacto input.invalid,
+.formulario-contacto textarea.invalid {
+    border-color: var(--color-acento);
+    box-shadow: 0 0 5px rgba(233, 69, 96, 0.5);
+}
+
+.formulario-contacto input.valid,
+.formulario-contacto textarea.valid {
+    border-color: #28a745;
+    box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
+}
+
+.error-message {
+    color: var(--color-acento);
+    font-size: 0.85rem;
+    margin-top: 5px;
+}
+
+.mensaje-exito {
+    background: linear-gradient(135deg, #28a745, #20c997);
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Cursor para efecto de typing */
+.presentacion h1 {
+    position: relative;
+}
+
+.presentacion h1::after {
+    content: '|';
+    position: absolute;
+    color: var(--color-acento);
+    animation: cursorBlink 1s infinite;
+    margin-left: 5px;
+}
+
+@keyframes cursorBlink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
