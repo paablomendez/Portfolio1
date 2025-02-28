@@ -1,16 +1,16 @@
 /* Paleta de colores - Tema oscuro */
 :root {
-    --color-primario: #06141B; /* Azul grisáceo muy oscuro - fondo principal */
-    --color-secundario: #11212D; /* Azul oscuro profundo - fondo secundario */
-    --color-terciario: #253745; /* Azul grisáceo medio - elementos contenedores */
-    --color-acento: #4A5C6A; /* Azul desaturado - color acento */
-    --color-acento-secundario: #9BA8AB; /* Gris azulado claro - segundo acento */
-    --color-texto: #CCD0CF; /* Gris muy claro - texto principal */
-    --color-texto-secundario: #9BA8AB; /* Gris medio - texto secundario */
-    --color-fondo: #06141B; /* Igual que el color primario - fondo general */
-    --color-fondo-tarjeta: #11212D; /* Igual que el secundario - fondo tarjetas */
-    --sombra: 0 4px 12px rgba(0, 0, 0, 0.4); /* Sombra estándar */
-    --sombra-neon: 0 0 10px rgba(74, 92, 106, 0.5); /* Sombra suave en el color acento */
+    --color-primario: #06141B;
+    --color-secundario: #11212D; 
+    --color-terciario: #253745; 
+    --color-acento: #4A5C6A; 
+    --color-acento-secundario: #9BA8AB;
+    --color-texto: #CCD0CF; 
+    --color-texto-secundario: #9BA8AB; 
+    --color-fondo: #06141B;
+    --color-fondo-tarjeta: #11212D;
+    --sombra: 0 4px 12px rgba(0, 0, 0, 0.4);
+    --sombra-neon: 0 0 10px rgba(74, 92, 106, 0.5); 
     --degradado-primario: linear-gradient(135deg, var(--color-primario), var(--color-terciario));
     --degradado-acento: linear-gradient(135deg, var(--color-acento), var(--color-acento-secundario));
     --degradado-acento-secundario: linear-gradient(45deg, var(--color-acento-secundario), #CCD0CF);
@@ -18,7 +18,6 @@
 
 
 
-/* Estilos generales */
 * {
     margin: 0;
     padding: 0;
@@ -34,10 +33,10 @@ body {
                       linear-gradient(to bottom, var(--color-fondo), var(--color-primario));
     background-attachment: fixed;
     position: relative;
-    overflow-x: hidden; /* Prevenir scroll horizontal */
+    overflow-x: hidden; 
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Asegurar que el contenido ocupe al menos toda la altura de la ventana */
+    min-height: 100vh; 
 }
 
 body::before {
@@ -53,12 +52,11 @@ body::before {
     z-index: -1;
 }
 
-/* Estilos del encabezado y navegación (FLEXBOX) */
 header {
     position: fixed;
     width: 100%;
     top: 0;
-    left: 0; /* Asegurar que está completamente centrado */
+    left: 0; 
     background-color: rgba(26, 26, 46, 0.95);
     backdrop-filter: blur(8px);
     color: var(--color-texto);
@@ -67,14 +65,13 @@ header {
     border-bottom: 1px solid rgba(233, 69, 96, 0.2);
 }
 
-/* Menú de navegación con Flexbox */
 .menu {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 15px 30px;
-    max-width: 1400px; /* Limitar ancho máximo */
-    margin: 0 auto; /* Centrar el menú */
+    max-width: 1400px; 
+    margin: 0 auto; 
 }
 
 .logo {
@@ -96,17 +93,16 @@ header {
     border-radius: 10px;
 }
 
-/* Lista del menú con Flexbox */
 .menu-list {
     display: flex;
     list-style: none;
-    justify-content: center; /* Centrar los elementos horizontalmente */
-    align-items: center; /* Centrar verticalmente */
+    justify-content: center; 
+    align-items: center;
 }
 
 .menu-list li {
     margin: 0 15px;
-    text-align: center; /* Centrar texto */
+    text-align: center; 
 }
 
 .menu-list a {
@@ -118,8 +114,8 @@ header {
     position: relative;
     font-weight: 500;
     letter-spacing: 0.5px;
-    display: inline-block; /* Mejor control para centrarlo */
-    text-align: center; /* Centrar texto dentro del enlace */
+    display: inline-block; 
+    text-align: center; 
 }
 
 .menu-list a::after {
@@ -142,7 +138,6 @@ header {
     width: 100%;
 }
 
-/* Ocultar el checkbox y el icono de hamburguesa por defecto */
 #menu-toggle, .menu-icon {
     display: none;
 }
@@ -152,16 +147,15 @@ header {
     font-size: 1.5rem;
 }
 
-/* Estilos de las secciones */
 .seccion {
     padding: 100px 30px;
     margin-top: 60px;
     position: relative;
     overflow: hidden;
-    width: 100%; /* Asegurar que ocupa todo el ancho */
-    display: flex; /* Para poder centrar el contenido */
-    flex-direction: column; /* Ordenar elementos verticalmente */
-    align-items: center; /* Centrar elementos horizontalmente */
+    width: 100%; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
 }
 
 .seccion::before {
@@ -176,8 +170,8 @@ header {
 
 h1, h2, h3 {
     color: var(--color-texto);
-    width: 100%; /* Asegurar que ocupan todo el ancho disponible */
-    text-align: center; /* Centrar texto */
+    width: 100%; 
+    text-align: center; 
 }
 
 h2 {
@@ -217,12 +211,11 @@ h2::after {
 main {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centrar contenido principal */
+    align-items: center; 
     width: 100%;
     flex-grow: 1;
 }
 
-/* Sección Inicio (FLEXBOX) */
 .contenedor-inicio {
     display: flex;
     align-items: center;
@@ -231,15 +224,15 @@ main {
     gap: 60px;
     margin: 0 auto;
     max-width: 1200px;
-    width: 100%; /* Asegurar que usa todo el ancho disponible */
+    width: 100%; 
 }
 
 .foto-perfil {
     flex: 1;
     min-width: 300px;
-    display: flex; /* Para centrar la imagen */
-    justify-content: center; /* Centrado horizontal */
-    align-items: center; /* Centrado vertical */
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
     position: relative;
 }
 
@@ -277,7 +270,7 @@ main {
 .presentacion {
     flex: 2;
     min-width: 300px;
-    text-align: center; /* Centrar texto en modo responsivo */
+    text-align: center; 
 }
 
 .presentacion h1 {
@@ -294,7 +287,7 @@ main {
     font-size: 1.8rem;
     color: var(--color-acento-secundario);
     margin-bottom: 25px;
-    text-align: center; /* Mantener centrado en ambos modos */
+    text-align: center; 
     padding-bottom: 0;
 }
 
@@ -308,10 +301,9 @@ main {
     color: var(--color-texto-secundario);
     margin-bottom: 30px;
     line-height: 1.8;
-    text-align: center; /* Centrar párrafos */
+    text-align: center; 
 }
 
-/* Sección Sobre Mí (GRID) */
 .grid-sobremi {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -328,10 +320,10 @@ main {
     box-shadow: var(--sombra);
     border-top: 4px solid var(--color-acento);
     transition: transform 0.3s ease;
-    text-align: center; /* Centrar contenido */
+    text-align: center; 
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centrar verticalmente */
+    align-items: center; 
 }
 
 .grid-sobremi div:hover {
@@ -346,15 +338,15 @@ main {
 .grid-sobremi ul {
     list-style-position: inside;
     margin-top: 10px;
-    text-align: center; /* Centrar listas */
-    padding: 0; /* Eliminar padding que puede afectar al centrado */
+    text-align: center; 
+    padding: 0; 
 }
 
 .grid-sobremi li {
     margin-bottom: 8px;
 }
 
-/* Sección Proyectos (GRID) */
+
 .proyectos-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -372,8 +364,8 @@ main {
     transition: transform 0.3s ease;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centrar contenido */
-    text-align: center; /* Centrar texto */
+    align-items: center;
+    text-align: center; 
 }
 
 .proyecto:hover {
@@ -395,11 +387,11 @@ main {
 
 .proyecto p {
     padding: 0 15px 15px;
-    text-align: center; /* Centrar texto */
+    text-align: center;
     width: 100%;
 }
 
-/* Sección Idiomas */
+
 .tabla-idiomas {
     width: 100%;
     max-width: 800px;
@@ -408,13 +400,13 @@ main {
     border-radius: 8px;
     overflow: hidden;
     box-shadow: var(--sombra);
-    text-align: center; /* Centrar texto en celdas */
+    text-align: center; 
 }
 
 .tabla-idiomas th, .tabla-idiomas td {
     border: 1px solid rgba(255, 255, 255, 0.1);
     padding: 12px 15px;
-    text-align: center; /* Centrar contenido en las celdas */
+    text-align: center; 
 }
 
 .tabla-idiomas th {
@@ -430,7 +422,6 @@ main {
     background-color: rgba(15, 52, 96, 0.5);
 }
 
-/* Sección Experiencia (FLEXBOX) */
 .experiencia-container {
     display: flex;
     flex-direction: column;
@@ -447,7 +438,7 @@ main {
     box-shadow: var(--sombra);
     border-left: 4px solid var(--color-acento);
     position: relative;
-    text-align: center; /* Centrar contenido */
+    text-align: center; 
 }
 
 .experiencia::before {
@@ -471,10 +462,10 @@ main {
     color: var(--color-acento);
     font-style: italic;
     margin-bottom: 15px;
-    text-align: center; /* Centrar */
+    text-align: center; 
 }
 
-/* Sección Contacto (FLEXBOX) */
+
 .formulario-contacto {
     display: flex;
     flex-direction: column;
@@ -486,20 +477,20 @@ main {
     padding: 30px;
     border-radius: 8px;
     box-shadow: var(--sombra);
-    align-items: center; /* Centrar elementos del formulario */
+    align-items: center; 
 }
 
 .form-grupo {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    width: 100%; /* Usar todo el ancho disponible */
+    width: 100%; 
 }
 
 .formulario-contacto label {
     font-weight: bold;
     color: var(--color-texto);
-    text-align: left; /* Alinear etiquetas a la izquierda */
+    text-align: left; 
 }
 
 .formulario-contacto input,
@@ -510,7 +501,7 @@ main {
     color: var(--color-texto);
     border-radius: 5px;
     transition: border-color 0.3s;
-    width: 100%; /* Usar todo el ancho disponible */
+    width: 100%; 
 }
 
 .formulario-contacto input:focus,
@@ -530,7 +521,7 @@ main {
     font-weight: bold;
     transition: all 0.3s ease;
     margin-top: 10px;
-    align-self: center; /* Centrar botón */
+    align-self: center; 
     min-width: 150px;
 }
 
@@ -539,7 +530,7 @@ main {
     box-shadow: var(--sombra-neon);
 }
 
-/* Footer */
+
 footer {
     background-color: var(--color-primario);
     color: var(--color-texto-secundario);
@@ -550,11 +541,11 @@ footer {
     border-top: 1px solid rgba(233, 69, 96, 0.2);
 }
 
-/* Media queries para responsive */
+
 @media (max-width: 768px) {
-    /* Menú hamburguesa */
+
     .menu {
-        padding: 15px 20px; /* Reducir padding en móvil */
+        padding: 15px 20px; 
     }
     
     .menu-icon {
@@ -578,23 +569,23 @@ footer {
     }
 
     .menu-list li {
-        margin: 0; /* Eliminar márgenes */
-        width: auto; /* Permitir que el ancho se ajuste al contenido */
+        margin: 0;
+        width: auto; 
     }
 
     .menu-list a {
-        font-size: 0.8rem; /* Hacer texto más pequeño */
-        padding: 8px 5px; /* Reducir padding */
-        white-space: nowrap; /* Evitar saltos de línea */
+        font-size: 0.8rem; 
+        padding: 8px 5px; 
+        white-space: nowrap; 
     }
 
     #menu-toggle:checked ~ .menu-list {
         display: flex;
     }
 
-    /* Ajustes adicionales para responsive */
+
     .seccion {
-        padding: 80px 15px; /* Reducir padding */
+        padding: 80px 15px;
     }
 
     .contenedor-inicio {
@@ -622,19 +613,17 @@ footer {
         font-size: 2rem;
     }
     
-    /* Asegurar que los campos del formulario usen todo el ancho disponible */
+
     .formulario-contacto {
         padding: 20px 15px;
     }
     
-    /* Ajustar proyectos para mejor visualización en móvil */
+
     .proyectos-grid {
         gap: 20px;
     }
 }
-/* Añadir al final del archivo estilos.css */
 
-/* Estilos para animaciones de scroll */
 .animate-on-scroll {
     opacity: 0;
     transform: translateY(30px);
@@ -646,14 +635,12 @@ footer {
     transform: translateY(0);
 }
 
-/* Escalonar las animaciones para elementos en grid */
 .grid-sobremi > div:nth-child(1) { transition-delay: 0.1s; }
 .grid-sobremi > div:nth-child(2) { transition-delay: 0.2s; }
 .grid-sobremi > div:nth-child(3) { transition-delay: 0.3s; }
 .grid-sobremi > div:nth-child(4) { transition-delay: 0.4s; }
 .grid-sobremi > div:nth-child(5) { transition-delay: 0.5s; }
 
-/* Estilos para el formulario de contacto */
 .formulario-contacto input.invalid,
 .formulario-contacto textarea.invalid {
     border-color: var(--color-acento);
@@ -688,7 +675,6 @@ footer {
     to { opacity: 1; }
 }
 
-/* Cursor para efecto de typing */
 .presentacion h1 {
     position: relative;
 }
