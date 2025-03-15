@@ -12,16 +12,14 @@
     --sombra: 0 4px 12px rgba(0, 0, 0, 0.1); 
     --sombra-neon: 0 0 15px rgba(67, 97, 238, 0.3); 
     --degradado-primario: linear-gradient(135deg, #e9ecef, #dee2e6);
-    --degradado-acento: linear-gradient(135deg, #4361ee, #3f8efc);
-    --degradado-acento-secundario: linear-gradient(45deg, #3f8efc, #60c3e8);
+    --degradado-dos: linear-gradient(135deg, #4361ee, #3f8efc);
+    --degradado-dos-dos: linear-gradient(45deg, #3f8efc, #60c3e8);
 }
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
@@ -34,7 +32,6 @@ body {
     flex-direction: column;
     min-height: 100vh;
 }
-
 /* Estilos del encabezado y navegación (FLEXBOX) */
 header {
     position: fixed;
@@ -42,12 +39,11 @@ header {
     top: 0;
     left: 0;
     background-color: rgba(248, 249, 250, 0.95);
-    backdrop-filter: blur(8px);
     color: var(--color-texto);
     z-index: 1000;
     box-shadow: var(--sombra);
-    border-bottom: 1px solid rgba(67, 97, 238, 0.2);}
-
+    border-bottom: 1px solid rgba(67, 97, 238, 0.2);
+}
 /* Menú de navegación con Flexbox */
 .menu {
     display: flex;
@@ -57,7 +53,6 @@ header {
     max-width: 1400px;
     margin: 0 auto;
 }
-
 .logo {
     font-size: 1.8rem;
     font-weight: bold;
@@ -65,18 +60,6 @@ header {
     text-shadow: 0 0 5px rgba(67, 97, 238, 0.3);
     position: relative;
 }
-
-.logo::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 50%;
-    height: 2px;
-    background: var(--degradado-acento);
-    border-radius: 10px;
-}
-
 /* Lista del menú con Flexbox */
 .menu-list {
     display: flex;
@@ -84,12 +67,10 @@ header {
     justify-content: center;
     align-items: center;
 }
-
 .menu-list li {
     margin: 0 15px;
     text-align: center;
 }
-
 .menu-list a {
     color: var(--color-texto);
     text-decoration: none;
@@ -102,38 +83,21 @@ header {
     display: inline-block;
     text-align: center;
 }
-
-.menu-list a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--degradado-acento);
-    transition: width 0.3s ease;
-    border-radius: 10px;
-}
-
 .menu-list a:hover {
     color: var(--color-acento);
 }
-
 .menu-list a:hover::after {
     width: 100%;
 }
-
 /* Ocultar el checkbox y el icono de hamburguesa por defecto */
 #alternarmenu, .menuicono {
     display: none;
 }
-
 .menuicono {
     color: var(--color-acento);
     font-size: 1.5rem;
     cursor: pointer;
 }
-
 /* Estilos de las secciones */
 .seccion {
     padding: 100px 30px;
@@ -145,7 +109,6 @@ header {
     flex-direction: column;
     align-items: center;
 }
-
 .seccion::before {
     content: '';
     position: absolute;
@@ -155,13 +118,11 @@ header {
     height: 1px;
     background: linear-gradient(90deg, transparent, var(--color-acento-secundario), transparent);
 }
-
 h1, h2, h3 {
     color: var(--color-texto);
     width: 100%;
     text-align: center;
 }
-
 h2 {
     text-align: center;
     margin-bottom: 60px;
@@ -171,31 +132,6 @@ h2 {
     font-weight: 700;
     letter-spacing: 1px;
 }
-
-h2::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 120px;
-    height: 3px;
-    background: var(--degradado-acento);
-    border-radius: 10px;
-}
-
-h2::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 40px;
-    height: 3px;
-    background: var(--degradado-acento-secundario);
-    border-radius: 10px;
-}
-
 main {
     display: flex;
     flex-direction: column;
@@ -203,7 +139,6 @@ main {
     width: 100%;
     flex-grow: 1;
 }
-
 /* Sección Inicio (FLEXBOX) */
 .contenedor-inicio {
     display: flex;
@@ -215,7 +150,6 @@ main {
     max-width: 1200px;
     width: 100%;
 }
-
 .foto-perfil {
     flex: 1;
     min-width: 300px;
@@ -224,68 +158,37 @@ main {
     align-items: center;
     position: relative;
 }
-
-.foto-perfil::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 270px;
-    height: 270px;
-    background: var(--degradado-acento);
-    border-radius: 50%;
-    opacity: 0.2;
-    filter: blur(20px);
-    animation: pulse 6s infinite alternate;
-}
-
 @keyframes pulse {
     0% { transform: translate(-50%, -50%) scale(1); opacity: 0.2; }
     100% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.3; }
 }
-
 .foto-perfil img {
     width: 350px;
     height: 350px;
     border-radius: 50%;
-    object-fit: cover;
     border: 4px solid var(--color-acento);
     box-shadow: 0 0 25px rgba(67, 97, 238, 0.5);
     position: relative;
     z-index: 2;
 }
-
 .presentacion {
     flex: 2;
     min-width: 300px;
     text-align: center;
 }
-
 .presentacion h1 {
     font-size: 3rem;
     margin-bottom: 15px;
     background: linear-gradient(to right, var(--color-texto), var(--color-acento));
-    -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     font-weight: 800;
     position: relative;
 }
-
-.presentacion h1::after {
-    content: '|';
-    position: absolute;
-    color: var(--color-acento);
-    animation: cursorBlink 1s infinite;
-    margin-left: 5px;
-}
-
 @keyframes cursorBlink {
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
 }
-
 .presentacion h2 {
     font-size: 1.8rem;
     color: var(--color-acento);
@@ -297,11 +200,9 @@ h2 i {
     margin-right: 10px;
     color: var(--color-acento);
 }
-.presentacion h2::before,
 .presentacion h2::after {
     display: none;
 }
-
 .presentacion p {
     font-size: 1.1rem;
     color: var(--color-texto-secundario);
@@ -309,7 +210,6 @@ h2 i {
     line-height: 1.8;
     text-align: center;
 }
-
 /* Sección Sobre Mí (GRID) */
 .grid-sobremi {
     display: grid;
@@ -319,7 +219,6 @@ h2 i {
     width: 100%;
     margin: 0 auto;
 }
-
 .grid-sobremi div {
     background-color: var(--color-fondo-tarjeta);
     padding: 25px;
@@ -332,17 +231,14 @@ h2 i {
     flex-direction: column;
     align-items: center;
 }
-
 .grid-sobremi div:hover {
     transform: translateY(-5px);
     box-shadow: var(--sombra-neon);
 }
-
 .grid-sobremi h3 {
     margin-bottom: 15px;
     color: var(--color-acento);
 }
-
 .grid-sobremi ul {
     list-style-position: inside;
     margin-top: 10px;
@@ -354,11 +250,9 @@ h2 i {
     color: var(--color-acento);
     margin-bottom: 15px;
 }
-
 .grid-sobremi li {
     margin-bottom: 8px;
 }
-
 /* Sección Proyectos (GRID) */
 .proyectos-grid {
     display: grid;
@@ -368,7 +262,6 @@ h2 i {
     width: 100%;
     margin: 0 auto;
 }
-
 .proyecto {
     background-color: var(--color-fondo-tarjeta);
     border-radius: 8px;
@@ -380,30 +273,25 @@ h2 i {
     align-items: center;
     text-align: center;
 }
-
 .proyecto:hover {
     transform: translateY(-5px);
     box-shadow: var(--sombra-neon);
 }
-
 .proyecto img {
     width: 100%;
     height: 200px;
     object-fit: cover;
 }
-
 .proyecto h3 {
     padding: 15px 15px 5px;
     color: var(--color-acento);
     width: 100%;
 }
-
 .proyecto p {
     padding: 0 15px 15px;
     text-align: center;
     width: 100%;
 }
-
 /* Sección Idiomas */
 .tabla-idiomas {
     width: 100%;
@@ -415,28 +303,23 @@ h2 i {
     box-shadow: var(--sombra);
     text-align: center;
 }
-
 .tabla-idiomas th, .tabla-idiomas td {
     border: 1px solid rgba(255, 255, 255, 0.1);
     padding: 12px 15px;
     text-align: center;
 }
-
 .tabla-idiomas th {
     background-color: var(--color-acento);
     color: var(--color-fondo);
 }
-
 .tabla-idiomas tr:nth-child(even) {
     background-color: rgba(255, 255, 255, 0.7);
 }
-
 .tabla-idiomas tr:hover {
     background-color: rgba(63, 142, 252, 0.2);
 }
-
 /* Sección Experiencia (FLEXBOX) */
-.experiencia-container {
+.experienciacontenedor {
     display: flex;
     flex-direction: column;
     gap: 25px;
@@ -444,7 +327,6 @@ h2 i {
     width: 100%;
     margin: 0 auto;
 }
-
 .experiencia {
     background-color: var(--color-fondo-tarjeta);
     padding: 25px;
@@ -454,31 +336,16 @@ h2 i {
     position: relative;
     text-align: center;
 }
-
-.experiencia::before {
-    content: '';
-    position: absolute;
-    top: 20px;
-    left: -12px;
-    width: 20px;
-    height: 20px;
-    background-color: var(--color-acento);
-    border-radius: 50%;
-    border: 3px solid var(--color-fondo-tarjeta);
-}
-
 .experiencia h3 {
     color: var(--color-acento);
     margin-bottom: 5px;
 }
-
 .experiencia h4 {
     color: var(--color-texto-secundario);
     font-style: italic;
     margin-bottom: 15px;
     text-align: center;
 }
-
 /* Sección Contacto (FLEXBOX) */
 .formulario-contacto {
     display: flex;
@@ -493,20 +360,17 @@ h2 i {
     box-shadow: var(--sombra);
     align-items: center;
 }
-
-.form-grupo {
+.formulariogrupo {
     display: flex;
     flex-direction: column;
     gap: 8px;
     width: 100%;
 }
-
 .formulario-contacto label {
     font-weight: bold;
     color: var(--color-texto);
     text-align: left;
 }
-
 .formulario-contacto input,
 .formulario-contacto textarea {
     padding: 12px;
@@ -517,17 +381,15 @@ h2 i {
     transition: border-color 0.3s;
     width: 100%;
 }
-
 .formulario-contacto input:focus,
 .formulario-contacto textarea:focus {
     outline: none;
     border-color: var(--color-acento-secundario);
     box-shadow: 0 0 8px rgba(67, 97, 238, 0.5);
 }
-
 .formulario-contacto button {
     padding: 12px 25px;
-    background: var(--degradado-acento);
+    background: var(--degradado-dos);
     color: white;
     border: none;
     border-radius: 5px;
@@ -538,12 +400,10 @@ h2 i {
     align-self: center;
     min-width: 150px;
 }
-
 .formulario-contacto button:hover {
     transform: translateY(-3px);
     box-shadow: var(--sombra-neon);
 }
-
 /* Footer */
 footer {
     background-color: var(--color-terciario);
@@ -554,27 +414,22 @@ footer {
     width: 100%;
     border-top: 1px solid rgba(67, 97, 238, 0.2);
 }
-
-
 /* Estilos para el formulario de contacto */
 .formulario-contacto input.invalid,
 .formulario-contacto textarea.invalid {
     border-color: #dc3545;
     box-shadow: 0 0 5px rgba(220, 53, 69, 0.5);
 }
-
 .formulario-contacto input.valid,
 .formulario-contacto textarea.valid {
     border-color: #28a745;
     box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
 }
-
 .error-message {
     color: #dc3545;
     font-size: 0.85rem;
     margin-top: 5px;
 }
-
 .mensaje-exito {
     background: linear-gradient(135deg, #28a745, #20c997);
     color: white;
@@ -585,12 +440,10 @@ footer {
     font-weight: bold;
     animation: fadeIn 0.5s ease;
 }
-
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
 }
-
 /* Media queries para responsive */
 @media (max-width: 768px) {
     /* Menú hamburguesa */
