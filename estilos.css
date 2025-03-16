@@ -1,4 +1,4 @@
-/* Paleta de colores - Tema claro con patrón SVG */
+/* Colores*/
 :root {
     --color-primario: #f8f9fa; 
     --color-secundario: #e9ecef; 
@@ -32,7 +32,7 @@ body {
     flex-direction: column;
     min-height: 100vh;
 }
-/* Estilos del encabezado y navegación (FLEXBOX) */
+/* Encabezado y navegación flexbox */
 header {
     position: fixed;
     width: 100%;
@@ -44,7 +44,7 @@ header {
     box-shadow: var(--sombra);
     border-bottom: 1px solid rgba(67, 97, 238, 0.2);
 }
-/* Menú de navegación con Flexbox */
+/* navegación con flexbox */
 .menu {
     display: flex;
     align-items: center;
@@ -60,7 +60,7 @@ header {
     text-shadow: 0 0 5px rgba(67, 97, 238, 0.3);
     position: relative;
 }
-/* Lista del menú con Flexbox */
+/* Menu con flexbox */
 .menu-list {
     display: flex;
     list-style: none;
@@ -89,7 +89,6 @@ header {
 .menu-list a:hover::after {
     width: 100%;
 }
-/* Ocultar el checkbox y el icono de hamburguesa por defecto */
 #alternarmenu, .menuicono {
     display: none;
 }
@@ -139,7 +138,7 @@ main {
     width: 100%;
     flex-grow: 1;
 }
-/* Sección Inicio (FLEXBOX) */
+/* Inicio flexbox */
 .contenedor-inicio {
     display: flex;
     align-items: center;
@@ -210,7 +209,7 @@ h2 i {
     line-height: 1.8;
     text-align: center;
 }
-/* Sección Sobre Mí (GRID) */
+/* sobre mi grid */
 .grid-sobremi {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -253,7 +252,7 @@ h2 i {
 .grid-sobremi li {
     margin-bottom: 8px;
 }
-/* Sección Proyectos (GRID) */
+/* proyectos grid */
 .proyectos-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -292,7 +291,7 @@ h2 i {
     text-align: center;
     width: 100%;
 }
-/* Sección Idiomas */
+/* idiomas */
 .tabla-idiomas {
     width: 100%;
     max-width: 800px;
@@ -318,7 +317,7 @@ h2 i {
 .tabla-idiomas tr:hover {
     background-color: rgba(63, 142, 252, 0.2);
 }
-/* Sección Experiencia (FLEXBOX) */
+/* Experiencia flexbox */
 .experienciacontenedor {
     display: flex;
     flex-direction: column;
@@ -346,7 +345,7 @@ h2 i {
     margin-bottom: 15px;
     text-align: center;
 }
-/* Sección Contacto (FLEXBOX) */
+/* Contacto flexbox */
 .formulario-contacto {
     display: flex;
     flex-direction: column;
@@ -386,6 +385,7 @@ h2 i {
     outline: none;
     border-color: var(--color-acento-secundario);
     box-shadow: 0 0 8px rgba(67, 97, 238, 0.5);
+    font-family: 'Poppins', sans-serif;
 }
 .formulario-contacto button {
     padding: 12px 25px;
@@ -395,15 +395,11 @@ h2 i {
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
-    transition: all 0.3s ease;
     margin-top: 10px;
     align-self: center;
     min-width: 150px;
 }
-.formulario-contacto button:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--sombra-neon);
-}
+
 /* Footer */
 footer {
     background-color: var(--color-terciario);
@@ -414,7 +410,7 @@ footer {
     width: 100%;
     border-top: 1px solid rgba(67, 97, 238, 0.2);
 }
-/* Estilos para el formulario de contacto */
+/* Formulario*/
 .formulario-contacto input.invalid,
 .formulario-contacto textarea.invalid {
     border-color: #dc3545;
@@ -425,36 +421,19 @@ footer {
     border-color: #28a745;
     box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
 }
-.error-message {
-    color: #dc3545;
-    font-size: 0.85rem;
-    margin-top: 5px;
-}
-.mensaje-exito {
-    background: linear-gradient(135deg, #28a745, #20c997);
-    color: white;
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
-    font-size: 1.2rem;
-    font-weight: bold;
-    animation: fadeIn 0.5s ease;
-}
+
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
 }
-/* Media queries para responsive */
+/* Media queries*/
 @media (max-width: 768px) {
-    /* Menú hamburguesa */
     .menu {
         padding: 15px 20px;
     }
-    
     .menuicono {
         display: block;
     }
-
     .menu-list {
         display: none;
         flex-direction: row;
@@ -469,52 +448,40 @@ footer {
         border-bottom: 1px solid rgba(67, 97, 238, 0.2);
         box-shadow: var(--sombra);
     }
-
     .menu-list li {
         margin: 0;
         width: auto;
     }
-
     .menu-list a {
         font-size: 0.8rem;
         padding: 8px 5px;
         white-space: nowrap;
     }
-
     #alternarmenu:checked ~ .menu-list {
         display: flex;
     }
-
-    /* Ajustes adicionales para responsive */
     .seccion {
         padding: 80px 15px;
     }
-
     .contenedor-inicio {
         flex-direction: column;
     }
-
     .presentacion h1 {
         font-size: 2.5rem;
     }
-
     .presentacion h2 {
         text-align: center;
         font-size: 1.5rem;
     }
-
     .grid-sobremi {
         grid-template-columns: 1fr;
     }
-    
     h2 {
         font-size: 2rem;
     }
-    
     .formulario-contacto {
         padding: 20px 15px;
     }
-    
     .proyectos-grid {
         gap: 20px;
     }
