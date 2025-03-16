@@ -399,18 +399,6 @@ h2 i {
     align-self: center;
     min-width: 150px;
 }
-
-/* Footer */
-footer {
-    background-color: var(--color-terciario);
-    color: var(--color-texto-secundario);
-    text-align: center;
-    padding: 25px;
-    margin-top: 50px;
-    width: 100%;
-    border-top: 1px solid rgba(67, 97, 238, 0.2);
-}
-/* Formulario*/
 .formulario-contacto input.invalid,
 .formulario-contacto textarea.invalid {
     border-color: #dc3545;
@@ -421,7 +409,16 @@ footer {
     border-color: #28a745;
     box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
 }
-
+/* Footer */
+footer {
+    background-color: var(--color-terciario);
+    color: var(--color-texto-secundario);
+    text-align: center;
+    padding: 25px;
+    margin-top: 50px;
+    width: 100%;
+    border-top: 1px solid rgba(67, 97, 238, 0.2);
+}
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
